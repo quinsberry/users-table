@@ -20,7 +20,6 @@ export const getUsers = (offset = 0) => {
         console.log(err)
       })
       .then(res => {
-        console.log(res.data)
         return res.data
       })
   )

@@ -100,7 +100,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    extensions: ['.js', '.json', '.png', '.jpeg', '.svg', '.jsx'],
+    extensions: ['.js', '.json', '.png', '.jpeg', '.svg', '.jsx', '.ts', '.tsx'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }

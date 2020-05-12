@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import UsersTable from './components/UsersTable'
 import UserOrders from './components/UserOrders'
-import { getUsersTC, getUserOrdersInfoTC, setPageNumber } from './redux/usersReducer'
+import { getUsersTC, getUserOrdersInfoTC, setPageNumberTC } from './redux/usersReducer'
 
 import { Container, Grid } from '@material-ui/core'
 import useStyles from './styles'
@@ -11,7 +11,7 @@ import Paginator from './components/common/Paginator/Paginator'
 import ErrorPage from './components/ErrorPage'
 
 
-const App = ({ getUsersTC, getUserOrdersInfoTC, setPageNumber, users, userOrdersInfo, totalUsersCount, pageNumber, error, isFetching }) => {
+const App = ({ getUsersTC, getUserOrdersInfoTC, setPageNumberTC, users, userOrdersInfo, totalUsersCount, pageNumber, error, isFetching }) => {
 
   const [showModal, setShowModal] = React.useState(false)
 
@@ -27,7 +27,7 @@ const App = ({ getUsersTC, getUserOrdersInfoTC, setPageNumber, users, userOrders
       <Container className={classes.root} maxWidth="lg">
         {!error ? (
           <>
-            <Paginator getUsersTC={getUsersTC} setPageNumber={setPageNumber} pageNumber={pageNumber} classes={classes} totalUsersCount={totalUsersCount} isFetching={isFetching} />
+            <Paginator getUsersTC={getUsersTC} setPageNumber={setPageNumberTC} pageNumber={pageNumber} classes={classes} totalUsersCount={totalUsersCount} isFetching={isFetching} />
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <UsersTable classes={classes} users={users} pageNumber={pageNumber} getUserOrdersInfoTC={getUserOrdersInfoTC} setShowModal={setShowModal} isFetching={isFetching} />
@@ -59,5 +59,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   getUsersTC,
   getUserOrdersInfoTC,
-  setPageNumber
+  setPageNumberTC
 })(App)
